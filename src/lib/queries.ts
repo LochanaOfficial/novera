@@ -517,3 +517,12 @@ export const deleteSubAccount = async (subaccountId: string) => {
     return response
 }
 
+export const getAgencyDetails = async (agencyId: string) => {
+    const response = await db.agency.findUnique({
+        where: {
+            id: agencyId,
+        },
+    });
+
+    return response
+}
