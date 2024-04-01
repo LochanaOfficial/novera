@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
-    user: User & {
+    user?: User & {
         Agency:
           | (
               | Agency
@@ -15,8 +15,8 @@ type Props = {
             )
           | null
       }
-      id: string
-      className: string
+      id?: string
+      className?: string
 }
 
 const CreateSubaccountButton = ({
@@ -25,7 +25,7 @@ const CreateSubaccountButton = ({
     className,
 } : Props) => {
     const { setOpen } = useModal();
-    const agencyDetails = user.Agency
+    const agencyDetails = user?.Agency
 
     if (!agencyDetails) return
 
